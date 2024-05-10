@@ -53,7 +53,6 @@ export class BasicPageComponent {
       return null;
     }
 
-
     const errors = this.myForm.controls[field].errors || {};
 
     for (const key of Object.keys(errors)) {
@@ -64,14 +63,14 @@ export class BasicPageComponent {
 
         case 'minlength':
           return 'Este campo requiere minimo 3 letras'
-
+        
+        default:
+          break;
       }
-
 
     }
 
-    return 'hola'
+    return errors ? null : null; // Devuelve null si no hay errores
   }
-
 
 }
